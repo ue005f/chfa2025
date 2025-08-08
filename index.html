@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>機會命運</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #e0ffff);
+      text-align: center;
+      padding: 2rem;
+    }h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #ffd700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+  background-color: #ffa500;
+}
+
+#result {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  background-color: #ffffffaa;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji {
+  font-size: 2rem;
+}
+
+  </style>
+</head>
+<body>
+  <h1>🎲 機會命運 🎲</h1>
+  <p>本周的是...？</p>
+  <div>
+    <button onclick="draw('chance')">💭 抽『機會』</button>
+    <button onclick="draw('fate')">🎲 抽『命運』</button>
+  </div>
+  <div id="result"></div>  <script>
+    const chanceQuestions = [
+      "最近一件沒跟人說過的小確幸是什麼？",
+      "有沒有一個你曾經很努力但沒什麼人知道的時刻？",
+      "如果你今天是虛擬角色，你會想被設計成怎樣？",
+      "說一個你其實很會但沒人誇過的技能（無論多小）",
+      "小時候曾相信但現在想起來很瞎的事情？",
+      "明天早餐要吃什麼？",
+      "假如可以交換身份一週，你覺得會發生什麼笨事？",
+      "如果要推薦一本書/漫畫/影片給，你會選哪個？為什麼？",
+      "有什麼事你其實很想學但一直沒機會開始？",
+      "今天卡的歌",
+      "最新的喜歡的人/事/物？",
+      "推薦的手搖飲？",
+      "國小最喜歡看的卡通或喜歡的偶像？",
+      "最推薦的餐廳",
+      "覺得其他人的動物塑是什麼",
+      "最想養的生物",
+      "知道但沒有要改掉的壞習慣",
+      "這週覺得自己很棒的時刻",
+      "一個你常常回想但其實沒什麼特別理由的回憶?",
+      "推薦哪個 APP／網站／工具",
+      "分享一個冷知識",
+      "最新存的梗圖"
+      
+    ];
+
+    const fateMissions = [
+      "拍下你這週覺得最可愛的東西",
+      "試著記錄你一天中聽到的三句話（別人講的 or 自己的）",
+      "對自己現在的桌面（實體 or 電腦）寫一段吐槽或感想",
+      "介紹一下你手機相簿的第7張照片",
+      "拍下你最喜歡待著的一個角落",
+      "去便利商店買平常不會買的東西，吃/喝完寫感想",
+      "設計其他人變成 RPG 遊戲角色的樣子（順便寫技能）",
+      "為這週發生的事配一首歌＋推薦原因（可以是廢事）",
+      "嘗試用非你慣用手畫一隻動物，然後命名牠",
+      "日記內容要用到一次歌名，且限制為白癡造句形式存在",
+      "用輕小說式標題來形容這週",
+      "本週日記禁用你我他",
+      "本週日記形容事物只能用四字詞",
+      "只能用對話的形式寫",
+      "只能寫一件事"
+      
+    ];
+
+    function draw(type) {
+      let question = "";
+      if (type === "chance") {
+        question = chanceQuestions[Math.floor(Math.random() * chanceQuestions.length)];
+        document.getElementById("result").innerHTML = `<div class='emoji'>💭 機會</div><p>${question}</p>`;
+      } else {
+        question = fateMissions[Math.floor(Math.random() * fateMissions.length)];
+        document.getElementById("result").innerHTML = `<div class='emoji'>🎲 命運</div><p>${question}</p>`;
+      }
+    }
+  </script></body>
+</html>
